@@ -7,7 +7,6 @@ export class PdfService {
     GlobalWorkerOptions.workerSrc = pdfWorkerSrc;
   }
 
-  // My use case demonstrating strongly typed usage.
   public async pdfToImageDataURLAsync(pdfFile: File): Promise<string> {
     const arrayBuffer = await new Response(pdfFile).arrayBuffer();
     const canvas: any = document.getElementById('the-canvas');
