@@ -1,4 +1,4 @@
-import { getDocument, GlobalWorkerOptions, PDFDocumentProxy, version } from 'pdfjs-dist';
+import { getDocument, GlobalWorkerOptions, version } from 'pdfjs-dist';
 
 export class PdfService {
 
@@ -14,7 +14,7 @@ export class PdfService {
     const ctx = canvas?.getContext('2d') as CanvasRenderingContext2D;
     const data: any = arrayBuffer;
 
-    const pdf: PDFDocumentProxy = await getDocument(data).promise;
+    const pdf = await getDocument(data).promise;
     const page = await pdf.getPage(1);
 
     const viewPortParams = { scale: 2 };
